@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-football-dev-225514-authRole",
+            "UnauthRoleArn": "arn:aws:iam::559245698240:role/amplify-football-dev-225514-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::559245698240:role/amplify-football-dev-225514-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-football-dev-225514-deployment",
+            "UnauthRoleName": "amplify-football-dev-225514-unauthRole",
+            "StackName": "amplify-football-dev-225514",
+            "StackId": "arn:aws:cloudformation:us-west-2:559245698240:stack/amplify-football-dev-225514/6f7ab4e0-3e5f-11eb-a886-02d6cc28dfbd",
+            "AmplifyAppId": "d2lolaj3l10keh"
+        },
+        "categories": {
+            "auth": {
+                "footballb484c3b8": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d2lolaj3l10keh",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

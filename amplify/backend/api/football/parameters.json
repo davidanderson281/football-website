@@ -1,0 +1,5 @@
+{
+    "AppSyncApiName": "football",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false
+}
