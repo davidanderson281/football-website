@@ -1,0 +1,18 @@
+
+    <div class="form-body">
+    <form autocomplete="off" [formGroup]="createForm" (ngSubmit)="onCreate(createForm.value)">
+      <div>
+        <label>What's happening: </label>
+        <input type="text" formControlName="name" autocomplete="off">
+      </div>
+      <div>
+        <label>Date: </label>
+        <input type="text" formControlName="description" autocomplete="off">
+      </div>
+      <div>
+        <label>Location: </label>
+        <input type="text" formControlName="city" autocomplete="off">
+      </div>
+      <button type="submit">Create game</button>
+    </form>
+  </div>
