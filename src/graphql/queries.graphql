@@ -1,25 +1,25 @@
 # this is an auto generated file. This will be overwritten
-query GetRestaurant($id: ID!) {
-  getRestaurant(id: $id) {
+query GetFootballGame($id: ID!) {
+  getFootballGame(id: $id) {
     id
     name
-    description
-    city
+    time
+    location
     createdAt
     updatedAt
   }
 }
-query ListRestaurants(
-  $filter: ModelRestaurantFilterInput
+query ListFootballGames(
+  $filter: ModelFootballGameFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listRestaurants(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listFootballGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       name
-      description
-      city
+      time
+      location
       createdAt
       updatedAt
     }

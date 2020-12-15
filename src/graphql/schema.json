@@ -15,7 +15,7 @@
         "name" : "Query",
         "description" : null,
         "fields" : [ {
-          "name" : "getRestaurant",
+          "name" : "getFootballGame",
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -33,20 +33,20 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Restaurant",
+            "name" : "FootballGame",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "listRestaurants",
+          "name" : "listFootballGames",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRestaurantFilterInput",
+              "name" : "ModelFootballGameFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -71,7 +71,7 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelRestaurantConnection",
+            "name" : "ModelFootballGameConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -83,7 +83,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "Restaurant",
+        "name" : "FootballGame",
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -116,7 +116,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "description",
+          "name" : "time",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -124,14 +124,14 @@
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
-              "name" : "String",
+              "name" : "AWSDateTime",
               "ofType" : null
             }
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "city",
+          "name" : "location",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -209,7 +209,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "ModelRestaurantConnection",
+        "name" : "ModelFootballGameConnection",
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -220,7 +220,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "OBJECT",
-              "name" : "Restaurant",
+              "name" : "FootballGame",
               "ofType" : null
             }
           },
@@ -244,7 +244,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelRestaurantFilterInput",
+        "name" : "ModelFootballGameFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -266,7 +266,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "time",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -275,7 +275,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "city",
+          "name" : "location",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -291,7 +291,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRestaurantFilterInput",
+              "name" : "ModelFootballGameFilterInput",
               "ofType" : null
             }
           },
@@ -304,7 +304,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRestaurantFilterInput",
+              "name" : "ModelFootballGameFilterInput",
               "ofType" : null
             }
           },
@@ -314,7 +314,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelRestaurantFilterInput",
+            "name" : "ModelFootballGameFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -740,7 +740,7 @@
         "name" : "Mutation",
         "description" : null,
         "fields" : [ {
-          "name" : "createRestaurant",
+          "name" : "createFootballGame",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -750,7 +750,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "CreateRestaurantInput",
+                "name" : "CreateFootballGameInput",
                 "ofType" : null
               }
             },
@@ -760,20 +760,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRestaurantConditionInput",
+              "name" : "ModelFootballGameConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Restaurant",
+            "name" : "FootballGame",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "updateRestaurant",
+          "name" : "updateFootballGame",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -783,7 +783,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "UpdateRestaurantInput",
+                "name" : "UpdateFootballGameInput",
                 "ofType" : null
               }
             },
@@ -793,20 +793,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRestaurantConditionInput",
+              "name" : "ModelFootballGameConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Restaurant",
+            "name" : "FootballGame",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "deleteRestaurant",
+          "name" : "deleteFootballGame",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -816,7 +816,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "DeleteRestaurantInput",
+                "name" : "DeleteFootballGameInput",
                 "ofType" : null
               }
             },
@@ -826,14 +826,14 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRestaurantConditionInput",
+              "name" : "ModelFootballGameConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Restaurant",
+            "name" : "FootballGame",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -845,7 +845,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "CreateRestaurantInput",
+        "name" : "CreateFootballGameInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -871,20 +871,20 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "time",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
-              "name" : "String",
+              "name" : "AWSDateTime",
               "ofType" : null
             }
           },
           "defaultValue" : null
         }, {
-          "name" : "city",
+          "name" : "location",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -902,7 +902,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelRestaurantConditionInput",
+        "name" : "ModelFootballGameConditionInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -915,7 +915,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "time",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -924,7 +924,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "city",
+          "name" : "location",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -940,7 +940,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRestaurantConditionInput",
+              "name" : "ModelFootballGameConditionInput",
               "ofType" : null
             }
           },
@@ -953,7 +953,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRestaurantConditionInput",
+              "name" : "ModelFootballGameConditionInput",
               "ofType" : null
             }
           },
@@ -963,7 +963,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelRestaurantConditionInput",
+            "name" : "ModelFootballGameConditionInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -973,7 +973,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "UpdateRestaurantInput",
+        "name" : "UpdateFootballGameInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -999,16 +999,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "time",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
-            "name" : "String",
+            "name" : "AWSDateTime",
             "ofType" : null
           },
           "defaultValue" : null
         }, {
-          "name" : "city",
+          "name" : "location",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -1022,7 +1022,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "DeleteRestaurantInput",
+        "name" : "DeleteFootballGameInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1043,34 +1043,34 @@
         "name" : "Subscription",
         "description" : null,
         "fields" : [ {
-          "name" : "onCreateRestaurant",
+          "name" : "onCreateFootballGame",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Restaurant",
+            "name" : "FootballGame",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onUpdateRestaurant",
+          "name" : "onUpdateFootballGame",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Restaurant",
+            "name" : "FootballGame",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onDeleteRestaurant",
+          "name" : "onDeleteFootballGame",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Restaurant",
+            "name" : "FootballGame",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -1078,6 +1078,51 @@
         } ],
         "inputFields" : null,
         "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelBooleanInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeExists",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeType",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "ModelAttributeTypes",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
         "enumValues" : null,
         "possibleTypes" : null
       }, {
@@ -1180,51 +1225,6 @@
         "description" : "Built-in Float",
         "fields" : null,
         "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ModelBooleanInput",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "ne",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "eq",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeExists",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeType",
-          "description" : null,
-          "type" : {
-            "kind" : "ENUM",
-            "name" : "ModelAttributeTypes",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        } ],
         "interfaces" : null,
         "enumValues" : null,
         "possibleTypes" : null
@@ -2154,23 +2154,6 @@
         "onFragment" : false,
         "onField" : false
       }, {
-        "name" : "deprecated",
-        "description" : null,
-        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
-        "args" : [ {
-          "name" : "reason",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : "\"No longer supported\""
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
         "name" : "aws_publish",
         "description" : "Tells the service which subscriptions will be published to when this mutation is called. This directive is deprecated use @aws_susbscribe directive instead.",
         "locations" : [ "FIELD_DEFINITION" ],
@@ -2187,6 +2170,23 @@
             }
           },
           "defaultValue" : null
+        } ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+        "name" : "deprecated",
+        "description" : null,
+        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
+        "args" : [ {
+          "name" : "reason",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : "\"No longer supported\""
         } ],
         "onOperation" : false,
         "onFragment" : false,

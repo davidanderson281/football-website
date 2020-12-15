@@ -1,6 +1,6 @@
-type Restaurant @model {
+type FootballGame @model {
   id: ID!
   name: String!
-  description: String!
-  city: String!
+  time: AWSDateTime!
+  location: String!
 }

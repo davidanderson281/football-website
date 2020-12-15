@@ -1,4 +1,7 @@
 {
+  "providers": [
+    "awscloudformation"
+  ],
   "projectName": "football",
   "version": "3.0",
   "frontend": "javascript",
@@ -7,11 +10,8 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "dist/football",
-      "BuildCommand": "npm.cmd run-script build",
+      "BuildCommand": "npm run-script build",
       "StartCommand": "ng serve"
     }
-  },
-  "providers": [
-    "awscloudformation"
-  ]
+  }
 }

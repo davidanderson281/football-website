@@ -1,12 +1,4 @@
 <amplify-authenticator>
-
-<div>
-  <mat-toolbar>
-    <span>Football Organiser</span>
-    <button mat-button color="primary" (click)="createGame()">Create Game</button>
-    <span class="example-spacer"></span>
-    <amplify-sign-out class="redButton"></amplify-sign-out>
-  </mat-toolbar>
-</div>
-<router-outlet></router-outlet>
+  <app-toolbar></app-toolbar>
+  <router-outlet></router-outlet>
 </amplify-authenticator>

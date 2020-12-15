@@ -1,18 +1,30 @@
+<div class="form-body">
+  <form (ngSubmit)="onSubmit()" #createGameForm="ngForm">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="model.name" name="name" #name="ngModel">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Location</mat-label>
+      <input matInput [(ngModel)]="model.location" name="location" #location="ngModel">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Time</mat-label>
+      <input matInput type="datetime-local" placeholder="start date" [(ngModel)]="model.time" name="time" #time="ngModel">
+    </mat-form-field>
+    <button type="submit">Create game</button>
+  </form>
 
-    <div class="form-body">
-    <form autocomplete="off" [formGroup]="createForm" (ngSubmit)="onCreate(createForm.value)">
-      <div>
-        <label>What's happening: </label>
-        <input type="text" formControlName="name" autocomplete="off">
-      </div>
-      <div>
-        <label>Date: </label>
-        <input type="text" formControlName="description" autocomplete="off">
-      </div>
-      <div>
-        <label>Location: </label>
-        <input type="text" formControlName="city" autocomplete="off">
-      </div>
-      <button type="submit">Create game</button>
-    </form>
+  <div class="row">
+    <div class="col-xs-3">Name</div>
+    <div class="col-xs-9">{{ model.name }}</div>
   </div>
+  <div class="row">
+    <div class="col-xs-3">Alter Ego</div>
+    <div class="col-xs-9">{{ model.location }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Power</div>
+    <div class="col-xs-9">{{ model.time }}</div>
+  </div>
+</div>

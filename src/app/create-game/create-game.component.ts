@@ -1,6 +1,6 @@
+import { FootballGame } from './../../types/football-game';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Restaurant } from 'src/types/restaurant';
 import { APIService } from '../API.service';
 
 @Component({
@@ -9,25 +9,25 @@ import { APIService } from '../API.service';
   styleUrls: ['./create-game.component.scss']
 })
 export class CreateGameComponent implements OnInit {
-  public createForm: FormGroup;
+  time: Date;
+  timeString: string;
+  model = new FootballGame('1', '', '', '');
 
   constructor(private api: APIService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.createForm = this.fb.group({
-      'name': ['', Validators.required],
-      'description': ['', Validators.required],
-      'city': ['', Validators.required]
-    });
+
   }
 
-  public onCreate(restaurant: Restaurant) {
-    this.api.CreateRestaurant(restaurant).then(event => {
+  onSubmit() {
+    console.log('time: ' + this.model.time);
+    this.model.time = this.model.time + ':00.000Z';
+    console.log('time: ' + this.model.time);
+    this.api.CreateFootballGame(this.model).then(event => {
       console.log('item created!');
-      this.createForm.reset();
     })
     .catch(e => {
-      console.log('error creating restaurant...', e);
+      console.log('error creating game...', e);
     });
   }
 }

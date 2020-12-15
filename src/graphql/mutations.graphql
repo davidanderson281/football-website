@@ -1,39 +1,39 @@
 # this is an auto generated file. This will be overwritten
-mutation CreateRestaurant(
-  $input: CreateRestaurantInput!
-  $condition: ModelRestaurantConditionInput
+mutation CreateFootballGame(
+  $input: CreateFootballGameInput!
+  $condition: ModelFootballGameConditionInput
 ) {
-  createRestaurant(input: $input, condition: $condition) {
+  createFootballGame(input: $input, condition: $condition) {
     id
     name
-    description
-    city
+    time
+    location
     createdAt
     updatedAt
   }
 }
-mutation UpdateRestaurant(
-  $input: UpdateRestaurantInput!
-  $condition: ModelRestaurantConditionInput
+mutation UpdateFootballGame(
+  $input: UpdateFootballGameInput!
+  $condition: ModelFootballGameConditionInput
 ) {
-  updateRestaurant(input: $input, condition: $condition) {
+  updateFootballGame(input: $input, condition: $condition) {
     id
     name
-    description
-    city
+    time
+    location
     createdAt
     updatedAt
   }
 }
-mutation DeleteRestaurant(
-  $input: DeleteRestaurantInput!
-  $condition: ModelRestaurantConditionInput
+mutation DeleteFootballGame(
+  $input: DeleteFootballGameInput!
+  $condition: ModelFootballGameConditionInput
 ) {
-  deleteRestaurant(input: $input, condition: $condition) {
+  deleteFootballGame(input: $input, condition: $condition) {
     id
     name
-    description
-    city
+    time
+    location
     createdAt
     updatedAt
   }

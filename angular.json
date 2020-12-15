@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "football"
+  "defaultProject": "football",
+  "cli": {
+    "analytics": false
+  }
 }

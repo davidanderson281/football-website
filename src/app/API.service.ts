@@ -9,20 +9,20 @@ export interface SubscriptionResponse<T> {
   value: GraphQLResult<T>;
 }
 
-export type CreateRestaurantInput = {
+export type CreateFootballGameInput = {
   id?: string | null;
   name: string;
-  description: string;
-  city: string;
+  time: string;
+  location: string;
 };
 
-export type ModelRestaurantConditionInput = {
+export type ModelFootballGameConditionInput = {
   name?: ModelStringInput | null;
-  description?: ModelStringInput | null;
-  city?: ModelStringInput | null;
-  and?: Array<ModelRestaurantConditionInput | null> | null;
-  or?: Array<ModelRestaurantConditionInput | null> | null;
-  not?: ModelRestaurantConditionInput | null;
+  time?: ModelStringInput | null;
+  location?: ModelStringInput | null;
+  and?: Array<ModelFootballGameConditionInput | null> | null;
+  or?: Array<ModelFootballGameConditionInput | null> | null;
+  not?: ModelFootballGameConditionInput | null;
 };
 
 export type ModelStringInput = {
@@ -64,25 +64,25 @@ export type ModelSizeInput = {
   between?: Array<number | null> | null;
 };
 
-export type UpdateRestaurantInput = {
+export type UpdateFootballGameInput = {
   id: string;
   name?: string | null;
-  description?: string | null;
-  city?: string | null;
+  time?: string | null;
+  location?: string | null;
 };
 
-export type DeleteRestaurantInput = {
+export type DeleteFootballGameInput = {
   id?: string | null;
 };
 
-export type ModelRestaurantFilterInput = {
+export type ModelFootballGameFilterInput = {
   id?: ModelIDInput | null;
   name?: ModelStringInput | null;
-  description?: ModelStringInput | null;
-  city?: ModelStringInput | null;
-  and?: Array<ModelRestaurantFilterInput | null> | null;
-  or?: Array<ModelRestaurantFilterInput | null> | null;
-  not?: ModelRestaurantFilterInput | null;
+  time?: ModelStringInput | null;
+  location?: ModelStringInput | null;
+  and?: Array<ModelFootballGameFilterInput | null> | null;
+  or?: Array<ModelFootballGameFilterInput | null> | null;
+  not?: ModelFootballGameFilterInput | null;
 };
 
 export type ModelIDInput = {
@@ -101,86 +101,86 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null;
 };
 
-export type CreateRestaurantMutation = {
-  __typename: "Restaurant";
+export type CreateFootballGameMutation = {
+  __typename: "FootballGame";
   id: string;
   name: string;
-  description: string;
-  city: string;
+  time: string;
+  location: string;
   createdAt: string;
   updatedAt: string;
 };
 
-export type UpdateRestaurantMutation = {
-  __typename: "Restaurant";
+export type UpdateFootballGameMutation = {
+  __typename: "FootballGame";
   id: string;
   name: string;
-  description: string;
-  city: string;
+  time: string;
+  location: string;
   createdAt: string;
   updatedAt: string;
 };
 
-export type DeleteRestaurantMutation = {
-  __typename: "Restaurant";
+export type DeleteFootballGameMutation = {
+  __typename: "FootballGame";
   id: string;
   name: string;
-  description: string;
-  city: string;
+  time: string;
+  location: string;
   createdAt: string;
   updatedAt: string;
 };
 
-export type GetRestaurantQuery = {
-  __typename: "Restaurant";
+export type GetFootballGameQuery = {
+  __typename: "FootballGame";
   id: string;
   name: string;
-  description: string;
-  city: string;
+  time: string;
+  location: string;
   createdAt: string;
   updatedAt: string;
 };
 
-export type ListRestaurantsQuery = {
-  __typename: "ModelRestaurantConnection";
+export type ListFootballGamesQuery = {
+  __typename: "ModelFootballGameConnection";
   items: Array<{
-    __typename: "Restaurant";
+    __typename: "FootballGame";
     id: string;
     name: string;
-    description: string;
-    city: string;
+    time: string;
+    location: string;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
 };
 
-export type OnCreateRestaurantSubscription = {
-  __typename: "Restaurant";
+export type OnCreateFootballGameSubscription = {
+  __typename: "FootballGame";
   id: string;
   name: string;
-  description: string;
-  city: string;
+  time: string;
+  location: string;
   createdAt: string;
   updatedAt: string;
 };
 
-export type OnUpdateRestaurantSubscription = {
-  __typename: "Restaurant";
+export type OnUpdateFootballGameSubscription = {
+  __typename: "FootballGame";
   id: string;
   name: string;
-  description: string;
-  city: string;
+  time: string;
+  location: string;
   createdAt: string;
   updatedAt: string;
 };
 
-export type OnDeleteRestaurantSubscription = {
-  __typename: "Restaurant";
+export type OnDeleteFootballGameSubscription = {
+  __typename: "FootballGame";
   id: string;
   name: string;
-  description: string;
-  city: string;
+  time: string;
+  location: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -189,17 +189,17 @@ export type OnDeleteRestaurantSubscription = {
   providedIn: "root"
 })
 export class APIService {
-  async CreateRestaurant(
-    input: CreateRestaurantInput,
-    condition?: ModelRestaurantConditionInput
-  ): Promise<CreateRestaurantMutation> {
-    const statement = `mutation CreateRestaurant($input: CreateRestaurantInput!, $condition: ModelRestaurantConditionInput) {
-        createRestaurant(input: $input, condition: $condition) {
+  async CreateFootballGame(
+    input: CreateFootballGameInput,
+    condition?: ModelFootballGameConditionInput
+  ): Promise<CreateFootballGameMutation> {
+    const statement = `mutation CreateFootballGame($input: CreateFootballGameInput!, $condition: ModelFootballGameConditionInput) {
+        createFootballGame(input: $input, condition: $condition) {
           __typename
           id
           name
-          description
-          city
+          time
+          location
           createdAt
           updatedAt
         }
@@ -213,19 +213,19 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <CreateRestaurantMutation>response.data.createRestaurant;
+    return <CreateFootballGameMutation>response.data.createFootballGame;
   }
-  async UpdateRestaurant(
-    input: UpdateRestaurantInput,
-    condition?: ModelRestaurantConditionInput
-  ): Promise<UpdateRestaurantMutation> {
-    const statement = `mutation UpdateRestaurant($input: UpdateRestaurantInput!, $condition: ModelRestaurantConditionInput) {
-        updateRestaurant(input: $input, condition: $condition) {
+  async UpdateFootballGame(
+    input: UpdateFootballGameInput,
+    condition?: ModelFootballGameConditionInput
+  ): Promise<UpdateFootballGameMutation> {
+    const statement = `mutation UpdateFootballGame($input: UpdateFootballGameInput!, $condition: ModelFootballGameConditionInput) {
+        updateFootballGame(input: $input, condition: $condition) {
           __typename
           id
           name
-          description
-          city
+          time
+          location
           createdAt
           updatedAt
         }
@@ -239,19 +239,19 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <UpdateRestaurantMutation>response.data.updateRestaurant;
+    return <UpdateFootballGameMutation>response.data.updateFootballGame;
   }
-  async DeleteRestaurant(
-    input: DeleteRestaurantInput,
-    condition?: ModelRestaurantConditionInput
-  ): Promise<DeleteRestaurantMutation> {
-    const statement = `mutation DeleteRestaurant($input: DeleteRestaurantInput!, $condition: ModelRestaurantConditionInput) {
-        deleteRestaurant(input: $input, condition: $condition) {
+  async DeleteFootballGame(
+    input: DeleteFootballGameInput,
+    condition?: ModelFootballGameConditionInput
+  ): Promise<DeleteFootballGameMutation> {
+    const statement = `mutation DeleteFootballGame($input: DeleteFootballGameInput!, $condition: ModelFootballGameConditionInput) {
+        deleteFootballGame(input: $input, condition: $condition) {
           __typename
           id
           name
-          description
-          city
+          time
+          location
           createdAt
           updatedAt
         }
@@ -265,16 +265,16 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <DeleteRestaurantMutation>response.data.deleteRestaurant;
+    return <DeleteFootballGameMutation>response.data.deleteFootballGame;
   }
-  async GetRestaurant(id: string): Promise<GetRestaurantQuery> {
-    const statement = `query GetRestaurant($id: ID!) {
-        getRestaurant(id: $id) {
+  async GetFootballGame(id: string): Promise<GetFootballGameQuery> {
+    const statement = `query GetFootballGame($id: ID!) {
+        getFootballGame(id: $id) {
           __typename
           id
           name
-          description
-          city
+          time
+          location
           createdAt
           updatedAt
         }
@@ -285,22 +285,22 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <GetRestaurantQuery>response.data.getRestaurant;
+    return <GetFootballGameQuery>response.data.getFootballGame;
   }
-  async ListRestaurants(
-    filter?: ModelRestaurantFilterInput,
+  async ListFootballGames(
+    filter?: ModelFootballGameFilterInput,
     limit?: number,
     nextToken?: string
-  ): Promise<ListRestaurantsQuery> {
-    const statement = `query ListRestaurants($filter: ModelRestaurantFilterInput, $limit: Int, $nextToken: String) {
-        listRestaurants(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  ): Promise<ListFootballGamesQuery> {
+    const statement = `query ListFootballGames($filter: ModelFootballGameFilterInput, $limit: Int, $nextToken: String) {
+        listFootballGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
           __typename
           items {
             __typename
             id
             name
-            description
-            city
+            time
+            location
             createdAt
             updatedAt
           }
@@ -320,59 +320,59 @@ export class APIService {
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
-    return <ListRestaurantsQuery>response.data.listRestaurants;
+    return <ListFootballGamesQuery>response.data.listFootballGames;
   }
-  OnCreateRestaurantListener: Observable<
-    SubscriptionResponse<OnCreateRestaurantSubscription>
+  OnCreateFootballGameListener: Observable<
+    SubscriptionResponse<OnCreateFootballGameSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateRestaurant {
-        onCreateRestaurant {
+      `subscription OnCreateFootballGame {
+        onCreateFootballGame {
           __typename
           id
           name
-          description
-          city
+          time
+          location
           createdAt
           updatedAt
         }
       }`
     )
-  ) as Observable<SubscriptionResponse<OnCreateRestaurantSubscription>>;
+  ) as Observable<SubscriptionResponse<OnCreateFootballGameSubscription>>;
 
-  OnUpdateRestaurantListener: Observable<
-    SubscriptionResponse<OnUpdateRestaurantSubscription>
+  OnUpdateFootballGameListener: Observable<
+    SubscriptionResponse<OnUpdateFootballGameSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateRestaurant {
-        onUpdateRestaurant {
+      `subscription OnUpdateFootballGame {
+        onUpdateFootballGame {
           __typename
           id
           name
-          description
-          city
+          time
+          location
           createdAt
           updatedAt
         }
       }`
     )
-  ) as Observable<SubscriptionResponse<OnUpdateRestaurantSubscription>>;
+  ) as Observable<SubscriptionResponse<OnUpdateFootballGameSubscription>>;
 
-  OnDeleteRestaurantListener: Observable<
-    SubscriptionResponse<OnDeleteRestaurantSubscription>
+  OnDeleteFootballGameListener: Observable<
+    SubscriptionResponse<OnDeleteFootballGameSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteRestaurant {
-        onDeleteRestaurant {
+      `subscription OnDeleteFootballGame {
+        onDeleteFootballGame {
           __typename
           id
           name
-          description
-          city
+          time
+          location
           createdAt
           updatedAt
         }
       }`
     )
-  ) as Observable<SubscriptionResponse<OnDeleteRestaurantSubscription>>;
+  ) as Observable<SubscriptionResponse<OnDeleteFootballGameSubscription>>;
 }
