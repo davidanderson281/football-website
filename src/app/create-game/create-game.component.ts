@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { APIService } from '../API.service';
 import { v1 as uuidv1 } from 'uuid';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-game',
@@ -12,10 +13,9 @@ import { v1 as uuidv1 } from 'uuid';
 export class CreateGameComponent implements OnInit {
   time: Date;
   timeString: string;
-  model = new FootballGame('1', '', '', '');
-  // model: FootballGame;
+  model = new FootballGame('', '', '', '');
 
-  constructor(private api: APIService, private fb: FormBuilder) { }
+  constructor(private api: APIService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -26,6 +26,7 @@ export class CreateGameComponent implements OnInit {
     this.model.id = uuidv1();
     this.api.CreateFootballGame(this.model).then(event => {
       console.log('item created!');
+      this.router.navigate(['/home']);
     })
     .catch(e => {
       console.log('error creating game...', e);

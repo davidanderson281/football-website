@@ -13,6 +13,8 @@ import { CreateGameComponent } from './create-game/create-game.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { GameDetailsComponent } from './game-details/game-details.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     CreateGameComponent,
     HomeComponent,
     PageNotFoundComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    GameDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

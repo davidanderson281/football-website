@@ -19,13 +19,9 @@ export class HomeComponent implements OnInit {
       this.footballGames = event.items;
     });
 
-    this.api.OnCreateFootballGameListener.subscribe( (event: any) => {
+    this.api.OnCreateFootballGameListener.subscribe((event: any) => {
       const newFootballGame = event.value.data.onCreateFootballGame;
       this.footballGames = [newFootballGame, ...this.footballGames];
     });
-  }
-
-  createGame() {
-    location.href = "/create-game"
   }
 }
